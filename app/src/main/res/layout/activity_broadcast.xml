@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".broadcastreceiver.BroadcastActivity">
+    tools:context=".broadcastreceiver.ActivityForBroadcast">
 
     <TextView
         android:id="@+id/nothing_broadcast"

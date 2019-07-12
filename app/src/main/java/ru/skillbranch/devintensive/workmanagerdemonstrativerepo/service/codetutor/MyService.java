@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -36,6 +37,7 @@ public class MyService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         mIsRandomGeneratorOn =true;
         new Thread(this::startRandomNumberGenerator).start();
+        Toast.makeText(getApplicationContext(), "onStartCommand", Toast.LENGTH_SHORT).show();
         return START_STICKY;
     }
 

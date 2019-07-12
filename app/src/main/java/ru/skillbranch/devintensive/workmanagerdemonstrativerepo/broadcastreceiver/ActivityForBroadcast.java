@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import ru.skillbranch.devintensive.workmanagerdemonstrativerepo.R;
 
-public class BroadcastActivity extends AppCompatActivity {
+public class ActivityForBroadcast extends AppCompatActivity {
 
     private RecyclerView recycler;
     private TextView text;

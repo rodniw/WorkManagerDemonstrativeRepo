@@ -11,12 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".service.codetutor.ServiceActivityTut">
-        </activity>
-        <activity android:name=".broadcastreceiver.BroadcastActivity">
-        </activity>
         <activity
-            android:name=".service.ServiceActivity"
+            android:name=".service.codetutor.ServiceActivityTut"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -25,11 +21,19 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".broadcastreceiver.ActivityForBroadcast">
+        </activity>
+        <activity
+            android:name=".service.ServiceActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
         </activity>
 
         <service android:name=".service.MusicService"/>
+        <service android:name=".service.codetutor.MyService"/>
     </application>
 
 </manifest>
