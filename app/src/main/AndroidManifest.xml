@@ -11,6 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".service.codetutor.ServiceActivityTut">
+        </activity>
         <activity android:name=".broadcastreceiver.BroadcastActivity">
         </activity>
         <activity

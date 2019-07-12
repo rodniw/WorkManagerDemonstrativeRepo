@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">WorkManagerDemonstrativeRepo</string>
     <string name="nothing_to_show">Nothing to show</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
 </resources>

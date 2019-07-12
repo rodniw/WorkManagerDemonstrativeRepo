@@ -21,7 +21,7 @@ public class ServiceActivity extends AppCompatActivity {
         start = findViewById(R.id.start_btn);
         stop = findViewById(R.id.stop_btn);
 
-        start.setOnClickListener(view -> startService(new Intent(this, MusicService.class)));
-        stop.setOnClickListener(view -> stopService(new Intent(this, MusicService.class)));
+        start.setOnClickListener(view -> startService(new Intent(getApplicationContext(), MusicService.class)));
+        stop.setOnClickListener(view -> stopService(new Intent(getApplicationContext(), MusicService.class)));
     }
 }
