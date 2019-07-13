@@ -16,6 +16,7 @@ import ru.skillbranch.devintensive.workmanagerdemonstrativerepo.R;
 public class ServiceActivityTut extends AppCompatActivity {
 
     private Button start;
+    private Button stop;
     private Button bind;
     private Button unbind;
     private Button random;
@@ -32,7 +33,7 @@ public class ServiceActivityTut extends AppCompatActivity {
         setContentView(R.layout.activity_service_tut);
 
         start = findViewById(R.id.start_btn_tut);
-        Button stop = findViewById(R.id.stop_btn_tut);
+        stop = findViewById(R.id.stop_btn_tut);
         bind = findViewById(R.id.bind_service_btn_tut);
         unbind = findViewById(R.id.unbind_service_btn_tut);
         random = findViewById(R.id.random_number_btn_tut);
