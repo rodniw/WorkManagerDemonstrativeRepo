@@ -3,7 +3,11 @@ package ru.skillbranch.devintensive.workmanagerdemonstrativerepo.service.codetut
 import android.app.Service;
 import android.content.Intent;
 import android.os.Binder;
+import android.os.Handler;
 import android.os.IBinder;
+import android.os.Message;
+import android.os.Messenger;
+import android.os.RemoteException;
 import android.support.annotation.Nullable;
 import android.widget.Toast;
 
@@ -19,17 +23,37 @@ public class MyService extends Service {
 
     public static final int GET_COUNT=0;
 
+    private class RandomNumberRequestHandler extends Handler {
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what){
+                case GET_COUNT: Message  messageSendRandomNumber = Message.obtain(null,GET_COUNT);
+                    messageSendRandomNumber.arg1=getRandomNumber();
+                    try{
+                        //will return messanger and i will send my message there
+                        msg.replyTo.send(messageSendRandomNumber);
+                    }catch (RemoteException e){
+                    }
+            }
+            super.handleMessage(msg);
+        }
+    }
+
     class MyServiceBinder extends Binder {
         public MyService getService() {
             return MyService.this;
         }
     }
 
+    private Messenger randomNumberMessenger = new Messenger(new RandomNumberRequestHandler());
+
     private IBinder binder = new MyServiceBinder();
 
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
+        //to make randomNumberMessenger workable we need to execute this commented piece of code
+        //return randomNumberMessenger.getBinder();
         return binder;
     }
 
