@@ -7,10 +7,18 @@ import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.app.NotificationCompat;
 
+import androidx.work.Data;
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;
 
+import static ru.skillbranch.devintensive.workmanagerdemonstrativerepo.SingleWorkActivity.KEY_TASK_DESC;
+
 public class MyWorker extends Worker {
+
+    public static final String KEY_OUTPUT_DESC = "key_output_desc";
+
+    private Data dataInput;
+    private Data dataOutput;
 
     public MyWorker(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
@@ -19,9 +27,17 @@ public class MyWorker extends Worker {
     @NonNull
     @Override
     public Result doWork() {
-        //for the example i would parse some hardcoded
-        displayNotification("work", "finished");
-        return Result.success();
+        dataInput = getInputData();
+        String desc = dataInput.getString(KEY_TASK_DESC);
+        displayNotification("work", desc);
+
+        dataOutput = new Data.Builder()
+                .putString(KEY_OUTPUT_DESC, "Task finished successfully")
+                .build();
+
+        setOutputData(dataOutput);
+
+        return Result.SUCCESS;
     }
 
     private void displayNotification(String task, String description) {
