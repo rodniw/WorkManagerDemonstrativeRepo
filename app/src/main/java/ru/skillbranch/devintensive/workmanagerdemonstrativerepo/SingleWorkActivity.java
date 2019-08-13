@@ -4,7 +4,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+import androidx.work.Constraints;
 import androidx.work.Data;
+import androidx.work.NetworkType;
 import androidx.work.OneTimeWorkRequest;
 import androidx.work.WorkManager;
 
@@ -17,6 +19,7 @@ public class SingleWorkActivity extends AppCompatActivity {
     private TextView textView;
 
     private Data data;
+    private Constraints constraints;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +30,15 @@ public class SingleWorkActivity extends AppCompatActivity {
                 .putString(KEY_TASK_DESC, "data sending")
                 .build();
 
+        constraints = new Constraints.Builder()
+                .setRequiresBatteryNotLow(true)
+                .setRequiresStorageNotLow(true)
+                .setRequiredNetworkType(NetworkType.CONNECTED)
+                .build();
+
         OneTimeWorkRequest request = new OneTimeWorkRequest.Builder(MyWorker.class)
                 .setInputData(data)
+                .setConstraints(constraints)
                 .build();
 
         textView = findViewById(R.id.work_status_tv);
