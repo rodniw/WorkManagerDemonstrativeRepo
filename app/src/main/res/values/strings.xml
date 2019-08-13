@@ -7,4 +7,6 @@
     <string name="unbind_service">Unbind Service</string>
     <string name="get_random_number">Get Random Number</string>
     <string name="number">Number</string>
+    <string name="start_single_work">Start single work</string>
+    <string name="default_text">Default</string>
 </resources>

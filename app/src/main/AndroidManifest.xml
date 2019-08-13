@@ -16,11 +16,6 @@
         <activity
             android:name=".service.codetutor.ServiceActivityTut"
             android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <activity android:name=".broadcastreceiver.ActivityForBroadcast">
         </activity>
@@ -29,8 +24,13 @@
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".SingleWorkActivity"
             android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
 
         <service android:name=".service.MusicService"/>
