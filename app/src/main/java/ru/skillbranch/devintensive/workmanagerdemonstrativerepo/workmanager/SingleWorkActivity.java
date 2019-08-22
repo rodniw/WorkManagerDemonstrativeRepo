@@ -1,4 +1,4 @@
-package ru.skillbranch.devintensive.workmanagerdemonstrativerepo;
+package ru.skillbranch.devintensive.workmanagerdemonstrativerepo.workmanager;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,7 +10,9 @@ import androidx.work.NetworkType;
 import androidx.work.OneTimeWorkRequest;
 import androidx.work.WorkManager;
 
-import static ru.skillbranch.devintensive.workmanagerdemonstrativerepo.MyWorker.KEY_OUTPUT_DESC;
+import ru.skillbranch.devintensive.workmanagerdemonstrativerepo.R;
+
+import static ru.skillbranch.devintensive.workmanagerdemonstrativerepo.workmanager.MyWorker.KEY_OUTPUT_DESC;
 
 public class SingleWorkActivity extends AppCompatActivity {
 

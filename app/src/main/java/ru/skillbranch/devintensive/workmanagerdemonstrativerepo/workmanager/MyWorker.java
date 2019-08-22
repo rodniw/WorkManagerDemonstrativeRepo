@@ -1,4 +1,4 @@
-package ru.skillbranch.devintensive.workmanagerdemonstrativerepo;
+package ru.skillbranch.devintensive.workmanagerdemonstrativerepo.workmanager;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -11,7 +11,9 @@ import androidx.work.Data;
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;
 
-import static ru.skillbranch.devintensive.workmanagerdemonstrativerepo.SingleWorkActivity.KEY_TASK_DESC;
+import ru.skillbranch.devintensive.workmanagerdemonstrativerepo.R;
+
+import static ru.skillbranch.devintensive.workmanagerdemonstrativerepo.workmanager.SingleWorkActivity.KEY_TASK_DESC;
 
 public class MyWorker extends Worker {
 
