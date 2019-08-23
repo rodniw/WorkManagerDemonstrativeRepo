@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "864314049196",
+    "firebase_url": "https://system-services-edu.firebaseio.com",
+    "project_id": "system-services-edu",
+    "storage_bucket": "system-services-edu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:864314049196:android:09f34f01aa28cf19",
+        "android_client_info": {
+          "package_name": "ru.skillbranch.devintensive.workmanagerdemonstrativerepo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "864314049196-l35enhv5f4gsq2e7gs17qa4ioi9hakfu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXMm-_sWPx7hsHPlAP38TYp2GjqMdadik"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "864314049196-l35enhv5f4gsq2e7gs17qa4ioi9hakfu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

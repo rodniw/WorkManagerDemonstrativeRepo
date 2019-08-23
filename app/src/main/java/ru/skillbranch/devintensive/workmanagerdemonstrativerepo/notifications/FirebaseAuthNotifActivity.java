@@ -4,31 +4,31 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import com.google.firebase.iid.FirebaseInstanceId;
+
 import ru.skillbranch.devintensive.workmanagerdemonstrativerepo.R;
 
 import static androidx.core.app.NotificationCompat.PRIORITY_DEFAULT;
 
-public class NotificationsActivity extends AppCompatActivity {
-
-    /*
-    1. Notification Channel >= Oreo
-    2. Notification Builder
-    3. Notification Manager
-     */
+public class FirebaseAuthNotifActivity extends AppCompatActivity {
 
     private static final String CHANNEL_ID = "rodni_dev";
     private static final String CHANNEL_NAME = "Rodni developer";
     private static final String CHANNEL_DESC = "Rodni developer Notifications";
 
+    private TextView textView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notifications);
+        setContentView(R.layout.activity_firebase_auth_notif);
+        textView = findViewById(R.id.firebase_token_text_view);
 
         //i need notification channel if a device has version greater than Oreo
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -39,9 +39,17 @@ public class NotificationsActivity extends AppCompatActivity {
             manager.createNotificationChannel(channel);
         }
 
-        findViewById(R.id.button_send_simple_notif).setOnClickListener(v -> {
-            displayNotification();
-        });
+        //this will return a task and i will listening to it
+        FirebaseInstanceId.getInstance().getInstanceId()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        String token = task.getResult().getToken();
+                        textView.setText(token);
+                    } else {
+                        textView.setText(task.getException().toString());
+                    }
+                });
+
     }
 
     //this method will display Notification

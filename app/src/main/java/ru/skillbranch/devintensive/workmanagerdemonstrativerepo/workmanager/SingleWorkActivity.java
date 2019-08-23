@@ -1,9 +1,9 @@
 package ru.skillbranch.devintensive.workmanagerdemonstrativerepo.workmanager;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.work.Constraints;
 import androidx.work.Data;
 import androidx.work.NetworkType;

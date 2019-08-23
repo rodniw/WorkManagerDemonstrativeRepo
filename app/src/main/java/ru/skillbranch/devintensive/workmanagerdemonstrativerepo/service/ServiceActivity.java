@@ -1,11 +1,10 @@
 package ru.skillbranch.devintensive.workmanagerdemonstrativerepo.service;
 
 import android.content.Intent;
-import android.media.MediaPlayer;
-import android.provider.Settings;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import ru.skillbranch.devintensive.workmanagerdemonstrativerepo.R;
 

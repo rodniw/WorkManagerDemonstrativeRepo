@@ -5,7 +5,8 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.IBinder;
 import android.provider.Settings;
-import android.support.annotation.Nullable;
+
+import androidx.annotation.Nullable;
 
 public class MusicService extends Service {
 
