@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".notifications.FirebaseAuthNotifActivity">
+        <activity android:name=".notifications.LoginToNotifByFirebase">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,31 +20,21 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".notifications.FirebaseAuthNotifActivity"/>
         <activity
             android:name=".notifications.NotificationsActivity"
-            android:screenOrientation="portrait">
-        </activity>
-
-        <activity android:name=".service.codetutor.FakeRemoteActivity">
-        </activity>
-
+            android:screenOrientation="portrait"/>
+        <activity android:name=".service.codetutor.FakeRemoteActivity"/>
         <activity
             android:name=".service.codetutor.ServiceActivityTut"
-            android:screenOrientation="portrait">
-        </activity>
-
-        <activity android:name=".broadcastreceiver.ActivityForBroadcast">
-        </activity>
-
+            android:screenOrientation="portrait"/>
+        <activity android:name=".broadcastreceiver.ActivityForBroadcast"/>
         <activity
             android:name=".service.ServiceActivity"
-            android:screenOrientation="portrait">
-        </activity>
-
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".workmanager.SingleWorkActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"/>
 
         <service android:name=".service.MusicService" />
         <service android:name=".service.codetutor.MyService" />
